@@ -20,12 +20,12 @@ class Warning extends FlxState {
         FlxG.mouse.useSystemCursor = true;
         key = new FlxText(0, 0, "Press any key to continue.", 12);
         key.screenCenter();
-        key.y = 300;
+        key.y = 350;
         stuff = [];
         stuff.push(
-            {ting: new FlxText(0, 0, "WARNING!", 25), create: function(t: FlxText) {
+            {ting: new FlxText(0, 0, "WARNING!", 50), create: function(t: FlxText) {
                 t.screenCenter();
-                t.y = 100;
+                t.y = 75;
             }, aftertween: null, color: FlxColor.fromRGB(255, 0, 0, 255)}
         );
         stuff.push(
