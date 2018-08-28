@@ -18,9 +18,9 @@ class PlayState extends FlxState
 	{
 		super.create();
 		FlxG.mouse.useSystemCursor = true;
-		text = new FlxText(0, 0, "Press [SPACE] to re-play splash.", 10);
+		text = new FlxText(0, 0, "Press [SPACE] to re-play splash.\nPress [W] to return to the warning screen.", 10);
 		text.screenCenter();
-		text.y = 480-20;
+		text.y = 480-40;
 		add(text);
 	}
 
@@ -28,9 +28,11 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		if (FlxG.keys.justPressed.SPACE) {
-			var tweenFrom = FlxColor.fromRGB(255, 255, 255, 255);
-			var tweenTo = FlxColor.fromRGB(0, 0, 0, 255);
-			FlxTween.color(text, 0.3, tweenFrom, tweenTo, {onComplete: playSplash});
+			Helper.fadeOut(text, playSplash, 0.3);
+		} else if (FlxG.keys.justPressed.W) {
+			Helper.fadeOut(text, function(f:FlxTween) {
+				FlxG.switchState(new Warning());
+			}, 0.3);
 		}
 	}
 	
