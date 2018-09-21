@@ -39,6 +39,6 @@ class HFSplash extends FlxState {
     }
 
     public function switchScene(tween: FlxTween): Void {
-        FlxG.switchState(new PlayState());
+        FlxG.switchState(new TitleScreen());
     }
 }
