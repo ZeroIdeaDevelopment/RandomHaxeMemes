@@ -74,7 +74,7 @@ class TitleScreen extends FlxState
 		for (text in texts) {
 			Helper.fadeOut(text.text, function(t:FlxTween) {
 				add(
-					new FlxText(10, 480-40, "Loading...", 16)
+					new FlxText(10, 480-40, "Now loading...", 16)
 				);
 				FlxG.switchState(new GameState());
 			});

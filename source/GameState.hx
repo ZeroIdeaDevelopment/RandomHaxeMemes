@@ -28,6 +28,7 @@ class GameState extends FlxState {
         super.update(elapsed);
 
         if (FlxG.keys.justPressed.BACKSPACE) toggleMusic();
+        if (FlxG.keys.justPressed.ESCAPE) FlxG.switchState(new TitleScreen());
         var gamepad: FlxGamepad = FlxG.gamepads.lastActive;
 		if (gamepad != null) updateInput(gamepad);
     }
